@@ -1,0 +1,14 @@
+:root{
+    --bg: rgb(43, 65, 163);
+    --fr: rgb(228, 238, 253);
+}
+body{
+    background-color: var(--bg);
+    color: var(--fr);
+}
+a{
+    color: rgb(233, 136, 119);
+}
+.signButton{
+    background-color:rgb(233, 136, 119); ;
+}
