@@ -6,9 +6,9 @@ function Home() {
             <h1>Home</h1>
             <a href="/signup">sign up</a>
             <br />
-            <a href="/login">Login</a>
+            <a href="/login">login</a>
         </div>
     )
 }
 
-export default Home
+export default Home;
