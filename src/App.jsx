@@ -8,18 +8,22 @@ import {
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import { AuthProvider } from './context/authContext';
 
 function App() {
 
   return (
-    <div className="App">
+    <div>
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <Signup/>
-          </Route>
-          
-        </Switch>
+        <AuthProvider>
+          <Switch>
+              
+            <Route exact path="/">
+              <Signup/>
+            </Route>
+            
+          </Switch>
+        </AuthProvider>
       </Router>
     </div>
   );
