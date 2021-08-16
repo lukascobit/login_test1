@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div>
-      <h1 className="logoText"><img className="logo" src={logo} alt=""/>Usercle</h1>
+      <h1 onClick={()=> window.location = "/"} className="logoText"><img className="logo" src={logo} alt=""/>Usercle</h1>
       {user ? <Home/> : <Signup/>}
     </div>
   )
@@ -59,15 +59,14 @@ function Home() {
   )
 }
 function Signout() {
-  console.log(auth.currentUser);
   return (
     <div>
       <div className="userCorner">
           <h1 className="usernameCorner"><img className="pfp" src={auth.currentUser.photoURL} alt=""/> {auth.currentUser.displayName}</h1>
           <h2>{auth.currentUser.email}</h2>
-          <button onClick={()=> auth.signOut()}>sign out as {auth.currentUser.displayName}</button>
+          <button className="signOut" onClick={()=> auth.signOut()}>sign out</button>
       </div>
-      <Chat/>
+      <Chat auth={auth.currentUser && auth}/>
     </div>
   )
 }

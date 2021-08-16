@@ -1,6 +1,7 @@
 :root{
     --bg: #2b41a3;
     --fr: rgb(228, 238, 253);
+    --or: #e98877;
 }
 body{
     background-color: var(--bg);
@@ -8,17 +9,18 @@ body{
     font-family:fantasy;
 }
 a{
-    color: rgb(233, 136, 119);
+    color: var(--or);
 }
 .signButton{
-    background-color:#e98877;
+    background-color:var(--or);
 }
 .logo{
     width: 3vw
 }
 .logoText{
     font-size: 3vw;
-    margin: 0;  
+    margin: 0;
+    cursor: pointer;  
 }
 .userCorner{
     position: absolute;
@@ -42,4 +44,29 @@ a{
     margin: 1vw;
     padding: 1vw;
     border-radius: 1vw;
+}
+.inputDiv{
+    width: 40%;
+}
+.textarea{
+    width: 80%;
+    height: 5vw;
+    resize: none;
+    font-family: fantasy;
+    margin: 1vw;
+}
+.send{
+    position: absolute;
+    background-color: var(--or);
+    font-size: 2vw;
+    top: 5vw;
+    border: 0.1vw solid rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.signOut{
+    background-color: var(--or);
+    font-size: 0.7vw;
+    border: 0.1vw solid rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    float: right;
 }
