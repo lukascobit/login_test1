@@ -17,12 +17,17 @@ app.post("/posts", async(req, res)=>{
     try {
         const respo = req.body
         console.log(respo);
-        const newTodo = await pool.query("INSERT INTO posts (body, username, pfp_url) VALUES($1, $2, $3) RETURNING *",
-         [respo[0].body, respo[1].username, respo[2].pfp_url]);
+        if(!respo[3].fileUrl){
+            respo[3].fileUrl = "no image"
+        }
+        console.log(respo[3].fileUrl);
+        const newTodo = await pool.query("INSERT INTO posts (body, username, pfp_url, fileUrl) VALUES($1, $2, $3, $4) RETURNING *",
+         [respo[0].body, respo[1].username, respo[2].pfp_url], "img.com");
+       
         console.log(newTodo);
-        res.json(newTodo.rows[0])
+        res.json(newTodo.rows);
     } catch (error) {
-        console.log(error);
+        console.log(error.message);
     }
 })
 
@@ -31,6 +36,7 @@ app.post("/posts", async(req, res)=>{
 app.get("/posts", async (req, res) => {
     try {
       const allposts = await pool.query("SELECT * FROM posts");
+      console.log(allposts);
       res.json(allposts.rows);
     } catch (err) {
       console.error(err.message);

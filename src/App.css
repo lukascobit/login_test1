@@ -8,8 +8,19 @@ body{
     color: var(--fr);
     font-family:fantasy;
 }
+*::selection{
+    background-color: var(--or);
+}
 a{
     color: var(--or);
+}
+button{
+    cursor: pointer;
+    border-radius: 0.1vw;
+}
+button:hover{
+    border: 0.1vw solid var(--or);
+    border-radius: 0.3vw;
 }
 .signButton{
     background-color:var(--or);
@@ -37,16 +48,18 @@ a{
 }
 .posts{
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
 }
 .post{
     background-color: rgb(64, 120, 224);
     margin: 1vw;
     padding: 1vw;
-    border-radius: 1vw;
+    border-radius: 0.5vw;
+    max-width: 30vw;
+    word-wrap:break-word;
 }
 .inputDiv{
-    width: 40%;
+    width: 70%;
 }
 .textarea{
     width: 80%;
@@ -69,4 +82,20 @@ a{
     border: 0.1vw solid rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     float: right;
+}
+.signIn{
+    background-color: var(--or);
+    font-size: 2vw;
+    top: 5vw;
+    border: 0.1vw solid rgb(255, 255, 255); 
+}
+.trashCan{
+    float: right;
+    cursor: pointer;
+}
+.trashCan:hover{
+    color: var(--or);
+}
+.no{
+    display: none;
 }

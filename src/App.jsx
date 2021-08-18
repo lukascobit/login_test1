@@ -6,7 +6,7 @@ import "firebase/auth"
 import logo from "./usercle_logo.png"
 
 import {useAuthState} from "react-firebase-hooks/auth"
-import {useCollectionData} from "react-firebase-hooks/firestore"
+// import {useCollectionData} from "react-firebase-hooks/firestore"
 import Chat from './components/Chat'
 
 if (!firebase.apps.length) {
@@ -25,7 +25,6 @@ if (!firebase.apps.length) {
 
 const auth = firebase.auth()
 const firestore = firebase.firestore()
-
 
 function App() {
 
@@ -47,14 +46,14 @@ function Signup() {
 
   return (
     <div>
-      <button onClick={signinWithGoogle} className="signin">Signin with google</button>
+      <button onClick={signinWithGoogle} className="signIn">Signin with google</button>
     </div>
   )
 }
 function Home() {
   return (
       <div>
-          {auth.currentUser ? <Signout auth={auth}/> : <p>you arent logged in</p>}
+          <Signout auth={auth}/>
       </div>
   )
 }
